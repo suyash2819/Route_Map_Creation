@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="/assets/AllRoutes.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <center>
+    <table>
+      <tr>
+        <th>
+          Route Name
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Stops
+        </th>
+        <th>
+          Route Type
+        </th>
+        <th>
+          Delete route
+        </th>
+        <th>
+          Update route
+        </th>
+      </tr>
+             <% for(var i=0; i < routes.length ; i++){%>
+              <tr>
+                <td><%= routes[i].RouteName %></td>
+                <td><%= routes[i].Status %></td>
+                <td><%=  routes[i].Stops %></td>
+                <td><%=  routes[i].Routetype %></td>
+                <td><a href="delete/<%=routes[i]._id %>">Delete</a></td>
+                <td><a href="update/<%=routes[i]._id %>">Update</a></td>
+              </tr>
+            <%} %>
+    </table>
+    </center>
+</html>
