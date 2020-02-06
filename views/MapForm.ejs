@@ -4,35 +4,52 @@
     <meta charset="utf-8">
     <title></title>
 
-  <link href="/assets/Map.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/Map.css">
   </head>
   <body>
-    <center>
-    <form class="" action="" method="post">
-    <center><h3>Please Enter the Details of the route</h3><cenetr><br><br>
-    Route Name   <input type="text" name="RouteName" value=""><br>
-    Route Status <input type="text" name="Status" value=""><br>
-    Route Type   <input type="text" name="Routetype" value=""><br>
-Enter Area name<input type='text' id='StartArea'><br>
-    Enter City   <input type='text' id='City'><br>
-    <center><h4>Please Enter the Destination</h4></center><br>
-     Enter Area name <input type='text' id='EndArea'><br>
-    <center><h4>Add stop</h4></center><br>
-    Name <input type="text" name="name" value="" id="StopName">
-    Enter latitude of location<input type="number" step="any" id='lat' name="latitude"><br>
-    Enter longitude of location<input type="number" step="any" id='long' name="longitude"><br>
-    <input type='submit' id='submit' value='Save Route'>
-    <button type="button" name="button" id="ViewRoute">View Route on Map</button>
-    <button type="button" name="button" id="ShowRoute"><a href="/AllRoutes">Show all available routes</a></button>
-    </form>
-    </center>
-    <div id="right-panel"></div>
-    <div id="map"></div>
-    <!-- Replace the value of the key parameter with your own API key. -->
-    <script type="text/javascript" src="/javascript/Map.js" charset="utf-8"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk">
-    </script>
+<center>
+  <h3>Please add the route details</h3>
+<form class="" action="" method="post">
+  Route Name   <input type="text" name="RouteName" value=""><br>
+  Route Status <input type="text" name="Status" value=""><br>
+  Route Type   <input type="text" name="Routetype" value=""><br>
+  Enter Area name<input type='text' id='StartArea'><br>
+  Enter City   <input type='text' id='City'><br>
+  <center><h4>Please Enter the Destination</h4></center><br>
+  Enter Area name <input type='text' id='EndArea'><br>
 
+  <!-- <center><h4>Add stop</h4></center><br>
+  Name <input type="text" name="name" value="" id="StopName">
+  Enter latitude of location<input type="number" step="any" id='lat' name="latitude"><br>
+  Enter longitude of location<input type="number" step="any" id='long' name="longitude"><br> -->
+  <input type='submit' id='submit' value='Save Route'>
+  <h4>Please Enter the Stop details if any and Click <br>Add Stop to add stops to the route</h4>
+  Number of stops you want to add in the path
+  <input type="number" id="NumberStops">
+  <div id="stopDet">
+    Add Area Name of the stop<input type="text" id="StopInput" name="name">
+    Latitude of the Stop <input type="number" id="lat" name="latitude"> <br>
+    Longitude of the Stop <input type="number" id="long" name="longitude"><br>
+  </div>
+
+  <input type="button" value="Add Stop" onclick="AddStop()" id="AddSt">
+</form>
+
+<button type="button" name="button" id="ViewRoute">View Route on Map</button>
+<button type="button" name="button" id="ShowRoute"><a href="/AllRoutes">Show all available routes</a></button>
+</center>
+
+<div id="right-panel"></div>
+<div id="map"></div>
+
+<script src="/javascript/Map.js" charset="utf-8"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script><script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9s8jfXTYZB0h8IZcaxQion1uLWI5imds">
+</script>
+<!-- <script src="/javascript/Map.js" charset="utf-8"></script> -->
   </body>
 </html>

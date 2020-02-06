@@ -2,8 +2,9 @@ const express = require('express');
 const bodyParser=require('body-parser');
 const mongoose = require('mongoose');
 const app=express();
-const Route=require('./Route_Schema.js');
-const Stops=require('./Route_Schema.js');
+// const Route=require('./Route_Schema.js');
+// const Stops=require('./Route_Schema.js');
+const {Route, Stops}=require('./Route_Schema.js');
 const url='mongodb://localhost:27017/Chalo';
 
 const connect = mongoose.connect(url);
@@ -23,12 +24,12 @@ app.get('/',(req,res) => {
 });
 
 app.post('/',(req,res) => {
-var stops=new Stops(req.body);
 var routes=new Route(req.body);
+var stops=new Stops(req.body);
 routes.Stops.push(stops);
 routes.save()
 .then(route => {
-     res.send("route saved to database");
+    stops.save().then(stop => {res.send("stop and route saved")}).catch(err => {console.log(err)});
 })
 .catch(err => {
     console.log(err);
@@ -37,6 +38,8 @@ routes.save()
 
 app.get('/AllRoutes',(req,res) => {
   Route.find({})
+  // .populate('Stops')
+  // .exec()
   .then(route => {
       res.render('AllRoutes',{routes:route})
   }).catch((err)=>next(err));

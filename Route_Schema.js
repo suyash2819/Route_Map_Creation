@@ -7,6 +7,10 @@ const stops=new mongoose.Schema({
     type:String,
     required:true
   },
+  Route:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Route'
+  },
   latitude:{
     type:Number,
     required:true
@@ -26,12 +30,18 @@ const routeschema=new mongoose.Schema({
     type:String,
     required:true
   },
-  Stops:[{type: mongoose.Schema.Types.ObjectId, ref:stops}],
+  Stops:[{type: mongoose.Schema.Types.ObjectId, ref:'Stops'}],
  Routetype:{
     type:String,
     required:true
   }
 });
-module.exports =mongoose.model("stops",stops);
-var routes = mongoose.model("Route",routeschema);
-module.exports = routes;
+// var Stops =mongoose.model("Stops",stops);
+// var Route = mongoose.model("Route",routeschema);
+// module.exports = Route;
+// module.exports = Stops;
+
+module.exports = {
+  Stops: mongoose.model('Stops',stops),
+  Route: mongoose.model('Route',routeschema)
+};

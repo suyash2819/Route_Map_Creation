@@ -1,18 +1,9 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
-
-input{
-  display:block;
-  margin: 20px;
-  width: 50%;
-  height: 20px;
-  border-style: solid;
-  border-color: black;
-  border: 1px 1px 1px 1px;
-  border-radius: 10px;
+#AddSt:hover {
+  cursor: pointer;
 }
-input[type="submit"]
-{
+#AddSt {
   height: 40px;
   font-size: 15px;
   border-radius: 0px;
@@ -21,11 +12,29 @@ input[type="submit"]
   color: white;
   background-color: black;
 }
-input[type="submit"]:hover{
- cursor: pointer;
+input {
+  padding: 5px;
+  display: block;
+  margin: 20px;
+  width: 50%;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
-button{
-  display:block;
+input[type="submit"] {
+  height: 40px;
+  font-size: 15px;
+  border-radius: 0px;
+  border: 0px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+button {
+  display: block;
   margin: 20px;
   width: 50%;
   height: 20px;
@@ -41,45 +50,34 @@ button{
   color: white;
   background-color: black;
 }
-button:hover
-{
-   cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
-
-a
-{
+#stopDet {
+  display: none;
+}
+a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 #map {
   height: 100%;
 }
 /* Optional: Makes the sample page fill the window. */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
- /* #floating-panel {
-  position: absolute;
-  top: 200px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-} */
 #right-panel {
-  font-family: 'Roboto','sans-serif';
+  font-family: "Roboto", "sans-serif";
   line-height: 30px;
   padding-left: 10px;
 }
 
-#right-panel select, #right-panel input {
+#right-panel select,
+#right-panel input {
   font-size: 15px;
 }
 
@@ -99,15 +97,6 @@ html, body {
 #map {
   margin-right: 400px;
 }
-/* #floating-panel {
-  background: #fff;
-  padding: 5px;
-  font-size: 14px;
-  font-family: Arial;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-  display: none;
-} */
 @media print {
   #map {
     height: 500px;
