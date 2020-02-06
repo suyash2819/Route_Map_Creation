@@ -5,7 +5,7 @@ const app=express();
 // const Route=require('./Route_Schema.js');
 // const Stops=require('./Route_Schema.js');
 const {Route, Stops}=require('./Route_Schema.js');
-const url='mongodb://localhost:27017/Chalo';
+const url='mongodb://suyash:SUYASH2819@ds033067.mlab.com:33067/heroku_tn5pzpqq'//'mongodb://localhost:27017/Chalo';
 
 const connect = mongoose.connect(url);
 connect.then(() => {
