@@ -5,7 +5,8 @@ const app=express();
 // const Route=require('./Route_Schema.js');
 // const Stops=require('./Route_Schema.js');
 const {Route, Stops}=require('./Route_Schema.js');
-const url='mongodb://suyash:SUYASH2819@ds033067.mlab.com:33067/heroku_tn5pzpqq'//'mongodb://localhost:27017/Chalo';
+const url='mongodb://suyash:SUYASH2819@ds033067.mlab.com:33067/heroku_tn5pzpqq';
+// const url='mongodb://localhost:27017/Chalo';
 
 const connect = mongoose.connect(url);
 connect.then(() => {
@@ -38,8 +39,8 @@ routes.save()
 
 app.get('/AllRoutes',(req,res) => {
   Route.find({})
-  // .populate('Stops')
-  // .exec()
+  .populate('Stops')
+  .exec()
   .then(route => {
       res.render('AllRoutes',{routes:route})
   }).catch((err)=>next(err));
@@ -80,6 +81,7 @@ app.put('/update/:id', (req,res) => {
     }
   });
 });
+
 
 var theport = process.env.PORT || 5000;
 app.listen(theport);
