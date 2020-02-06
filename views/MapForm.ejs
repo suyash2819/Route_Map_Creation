@@ -10,11 +10,11 @@
 <center>
   <h3>Please add the route details</h3>
 <form class="" action="" method="post">
-  Route Name   <input type="text" name="RouteName" value=""><br>
-  Route Status <input type="text" name="Status" value=""><br>
-  Route Type   <input type="text" name="Routetype" value=""><br>
-  Enter Area name<input type='text' id='StartArea'><br>
-  Enter City   <input type='text' id='City'><br>
+  Route Name   <input type="text" name="RouteName" value="" required><br>
+  Route Status <input type="text" name="Status" value="" required><br>
+  Route Type   <input type="text" name="Routetype" value="" required><br>
+  Enter Area name<input type='text' id='StartArea' required><br>
+  Enter City   <input type='text' id='City' required><br>
   <center><h4>Please Enter the Destination</h4></center><br>
   Enter Area name <input type='text' id='EndArea'><br>
 
@@ -22,17 +22,18 @@
   Name <input type="text" name="name" value="" id="StopName">
   Enter latitude of location<input type="number" step="any" id='lat' name="latitude"><br>
   Enter longitude of location<input type="number" step="any" id='long' name="longitude"><br> -->
-  <input type='submit' id='submit' value='Save Route'>
   <h4>Please Enter the Stop details if any and Click <br>Add Stop to add stops to the route</h4>
   Number of stops you want to add in the path
   <input type="number" id="NumberStops">
   <div id="stopDet">
-    Add Area Name of the stop<input type="text" id="StopInput" name="name">
-    Latitude of the Stop <input type="number" id="lat" name="latitude"> <br>
-    Longitude of the Stop <input type="number" id="long" name="longitude"><br>
+    Add Area Name of the stop<input type="text" id="StopInput" name="name" required>
+    Latitude of the Stop <input type="number" id="lat" name="latitude" required> <br>
+    Longitude of the Stop <input type="number" id="long" name="longitude" required><br>
   </div>
 
   <input type="button" value="Add Stop" onclick="AddStop()" id="AddSt">
+  <input type='submit' id='submit' value='Save Route'>
+
 </form>
 
 <button type="button" name="button" id="ViewRoute">View Route on Map</button>
