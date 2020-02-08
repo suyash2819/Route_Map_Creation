@@ -16,6 +16,15 @@
           Status
         </th>
         <th>
+          City
+        </th>
+        <th>
+          Source
+        </th>
+        <th>
+          Destination
+        </th>
+        <th>
           Stops
         </th>
         <th>
@@ -32,6 +41,9 @@
               <tr>
                 <td><%= routes[i].RouteName %></td>
                 <td><%= routes[i].Status %></td>
+                <td><%=  routes[i].City %></td>
+                <td><%=  routes[i].Source %></td>
+                <td><%=  routes[i].Destination %></td>
                 <td>
                   Name: <%=  routes[i].Stops[0].name %><br>
                   Latitude : <%=  routes[i].Stops[0].latitude %><br>

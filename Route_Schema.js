@@ -26,6 +26,18 @@ const routeschema=new mongoose.Schema({
     type:String,
     required:true
   },
+  Source:{
+      type:String,
+      required:true
+  },
+  Destination:{
+    type:String,
+    required:true
+  },
+  City:{
+    type:String,
+    required:true
+  },
  Status:{
     type:String,
     required:true
