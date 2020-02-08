@@ -38,8 +38,8 @@
                   Longitude : <%=  routes[i].Stops[0].longitude %>
                 </td>
                 <td><%=  routes[i].Routetype %></td>
-                <td><a href="delete/<%=routes[i]._id %>">Delete</a></td>
-                <td><a href="update/<%=routes[i]._id %>">Update</a></td>
+                <td><a href="delete/<%=routes[i]._id %>"><button type="button" name="button" class="Change">Delete</button></a></td>
+                <td><a href="update/<%=routes[i]._id %>"><center><button type="button" name="button" class="Change">Update</button></center></a></td>
               </tr>
             <%} %>
     </table>

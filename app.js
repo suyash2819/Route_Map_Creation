@@ -30,7 +30,10 @@ var stops=new Stops(req.body);
 routes.Stops.push(stops);
 routes.save()
 .then(route => {
-    stops.save().then(stop => {res.send("stop and route saved")}).catch(err => {console.log(err)});
+    stops.save().then(stop => {
+      res.send("stop and route saved");
+  })
+    .catch(err => {console.log(err)});
 })
 .catch(err => {
     console.log(err);
@@ -59,6 +62,7 @@ app.get('/update/:id', (req,res) => {
   });
 });
 
+
 app.post('/update/:id', (req,res) => {
   Route.findOne({_id:req.params.id}, (err, found) => {
     if(err) throw err;
@@ -75,7 +79,8 @@ app.post('/update/:id', (req,res) => {
       found.save((err, updated) => {
         if(err) throw err;
         else {
-          res.send(updated);
+          res.send("Route Details updated successfully");
+          res.redirect('/');
         }
       });
     }
@@ -84,4 +89,4 @@ app.post('/update/:id', (req,res) => {
 
 
 var theport = process.env.PORT || 5000;
- app.listen(theport);
+app.listen(theport);

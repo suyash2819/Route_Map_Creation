@@ -66,6 +66,9 @@ function AddStop() {
   document.getElementById("long").required = true;
   if(input.value)
     stops.push(input.value);
+  if(input.value)
+    document.getElementById('StopAdded').innerHTML="Stop Successfully added"
+  $("#StopAdded").show().delay(1000).fadeOut();
   if (input.value && stops.length < number) {
     console.log("yes");
     input.value = "";
