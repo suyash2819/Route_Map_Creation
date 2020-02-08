@@ -24,6 +24,7 @@
   background-color:  #4CAF50;
 
 }
+
 input {
   padding: 5px;
   display: block;
@@ -49,8 +50,17 @@ input[type="submit"]:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 }
+select
+{
+  padding: 5px;
+  display: block;
+  margin: 20px;
+  width: 50%;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid green;
+}
 button {
-
   display: block;
   margin: 20px;
   width: 30%;

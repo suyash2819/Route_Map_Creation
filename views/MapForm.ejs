@@ -10,9 +10,15 @@
 <h1>Find Your Route To The Destination</h1>
 <h3>Please add the route details</h3>
 <form class="" action="" method="post">
-    Route Name   <input type="text" name="RouteName" value="" required><br>
-    Route Status <input type="text" name="Status" value="" required><br>
-    Route Type   <input type="text" name="Routetype" value="" required><br>
+    Route Name<br>(any name)   <input type="text" name="RouteName" value="" required><br>
+     Route Status<select class="" name="Status">
+       <option value="Active">Active</option>
+       <option value="Inactive">Inactive</option>
+     </select><br><!--<input type="text" name="Status" value="" required><br> -->
+    Route Type  <select class="" name="Routetype">
+      <option value="Ac">AC</option>
+      <option value="General">General</option>
+    </select><br>  <!--<input type="text" name="Routetype" value="" required><br> -->
     Enter Area name<input type='text' name="Source" id='StartArea' required><br>
     Enter City   <input type='text' name="City" id='City' required><br>
     <center><h4>Please Enter the Destination</h4></center><br>
