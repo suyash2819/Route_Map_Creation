@@ -32,7 +32,11 @@
               <tr>
                 <td><%= routes[i].RouteName %></td>
                 <td><%= routes[i].Status %></td>
-                <td><%=  routes[i].Stops %></td>
+                <td>
+                  Name: <%=  routes[i].Stops[0].name %><br>
+                  Latitude : <%=  routes[i].Stops[0].latitude %><br>
+                  Longitude : <%=  routes[i].Stops[0].longitude %>
+                </td>
                 <td><%=  routes[i].Routetype %></td>
                 <td><a href="delete/<%=routes[i]._id %>">Delete</a></td>
                 <td><a href="update/<%=routes[i]._id %>">Update</a></td>

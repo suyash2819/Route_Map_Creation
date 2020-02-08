@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const stops=new mongoose.Schema({
   name:{
     type:String,
-    required:true
+    // required:true
   },
   Route:{
     type:mongoose.Schema.Types.ObjectId,
@@ -13,11 +13,11 @@ const stops=new mongoose.Schema({
   },
   latitude:{
     type:Number,
-    required:true
+    // required:true
   },
   longitude:{
     type:Number,
-    required:true
+    // required:true
   }
 });
 

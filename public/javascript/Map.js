@@ -60,9 +60,14 @@ function AddStop() {
   console.log(stops);
   var number = document.getElementById("NumberStops").value;
   console.log(number);
+  document.getElementById("NumberStops").required = true;
+  document.getElementById("StopInput").required = true;
+  document.getElementById("lat").required = true;
+  document.getElementById("long").required = true;
+  if(input.value)
+    stops.push(input.value);
   if (input.value && stops.length < number) {
     console.log("yes");
-    stops.push(input.value);
     input.value = "";
     lat.value = "";
     long.value = "";

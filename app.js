@@ -5,8 +5,8 @@ const app=express();
 // const Route=require('./Route_Schema.js');
 // const Stops=require('./Route_Schema.js');
 const {Route, Stops}=require('./Route_Schema.js');
-const url='mongodb://suyash:SUYASH2819@ds033067.mlab.com:33067/heroku_tn5pzpqq';
-// const url='mongodb://localhost:27017/Chalo';
+// const url='mongodb://suyash:SUYASH2819@ds033067.mlab.com:33067/heroku_tn5pzpqq';
+const url='mongodb://localhost:27017/Chalo';
 
 const connect = mongoose.connect(url);
 connect.then(() => {
@@ -59,7 +59,7 @@ app.get('/update/:id', (req,res) => {
   });
 });
 
-app.put('/update/:id', (req,res) => {
+app.post('/update/:id', (req,res) => {
   Route.findOne({_id:req.params.id}, (err, found) => {
     if(err) throw err;
     else {
@@ -83,5 +83,5 @@ app.put('/update/:id', (req,res) => {
 });
 
 
-var theport = process.env.PORT || 5000;
-app.listen(theport);
+// var theport = process.env.PORT || 5000;
+app.listen(3000);
